@@ -22,7 +22,7 @@ public class ProductsController {
 
 
     @PostMapping()
-    public ProductsDto addProducts(ProductsDto productsDto){
+    public ProductsDto addProducts(@RequestBody ProductsDto productsDto){
         return productDtoMapper.productsToProductDto(productsUseCase.addProduct(productDtoMapper.ProductDtoToproducts(productsDto)));
     }
     @GetMapping()

@@ -1,13 +1,13 @@
 package co.com.sofka.inventario.inventarioback.application.mapper;
 
-import co.com.sofka.inventario.inventarioback.domain.models.Buy;
 import co.com.sofka.inventario.inventarioback.domain.models.Products;
-import co.com.sofka.inventario.inventarioback.infrastructure.persistence.colletions.BuyColletion;
 import co.com.sofka.inventario.inventarioback.infrastructure.persistence.colletions.ProductsColletion;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class ProductMapper {
 
     public Products productCollectionToProduct(ProductsColletion productsColletion){

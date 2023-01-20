@@ -16,7 +16,7 @@ public class BuyColletion {
     private String idBuy;
     private String date;
     private String idType;
-    private Integer id;
+    private Integer idClient;
     private String clientName;
     private List<SoldProducts> products;
 

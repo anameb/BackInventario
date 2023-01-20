@@ -22,7 +22,7 @@ public class BuyUseCase {
     private final BuyMapper buyMapper;
 
     public Buy saveBuy(Buy buy) {
-        boolean error = false;
+        boolean error = true;
 
         List<SoldProducts> soldProductsList = buy.getProducts();
         for (SoldProducts soldProducts : soldProductsList) {
@@ -58,7 +58,7 @@ public class BuyUseCase {
             //indicar que no se pudo realizar la compra
         }
 
-        return buy;
+          return buy;
     }
 
     private boolean discountInventory(SoldProducts soldProducts, Products product) {
@@ -74,7 +74,7 @@ public class BuyUseCase {
 
     private boolean validateMinMax(SoldProducts soldProducts, Products product) {
 
-        if (product.getMin() >= soldProducts.getQuantity() && soldProducts.getQuantity() <= product.getMax()) {
+        if (product.getMin() <= soldProducts.getQuantity() && soldProducts.getQuantity() <= product.getMax()) {
             return true;
         } else {
             return false;

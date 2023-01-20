@@ -8,10 +8,7 @@ import co.com.sofka.inventario.inventarioback.infrastructure.persistence.service
 import co.com.sofka.inventario.inventarioback.infrastructure.restClient.dto.BuyDto;
 import co.com.sofka.inventario.inventarioback.infrastructure.restClient.mapper.BuyDtoMapper;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -24,7 +21,7 @@ public class BuyController {
     private final BuyDtoMapper buyDtoMapper;
 
     @PostMapping()
-    public BuyDto addBuy(BuyDto buyDto) {
+    public BuyDto addBuy(@RequestBody BuyDto buyDto) {
         return buyDtoMapper.buyToBuyDto(buyUseCase.saveBuy(buyDtoMapper.BuyDtoTobuy(buyDto)));
     }
     @GetMapping()

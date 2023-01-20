@@ -3,17 +3,19 @@ package co.com.sofka.inventario.inventarioback.application.mapper;
 import co.com.sofka.inventario.inventarioback.domain.models.Buy;
 import co.com.sofka.inventario.inventarioback.domain.models.SoldProducts;
 import co.com.sofka.inventario.inventarioback.infrastructure.persistence.colletions.BuyColletion;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class BuyMapper {
 
     public Buy buyCollectionToBuy(BuyColletion buyColletion){
         return Buy.builder()
                 .date(buyColletion.getDate())
                 .idType(buyColletion.getIdType())
-                .id(buyColletion.getId())
+                .id(buyColletion.getIdClient())
                 .clientName(buyColletion.getClientName())
                 .products(soldProductsListCollectionToSoldProductList(buyColletion.getProducts()))
                 .build();
@@ -35,7 +37,7 @@ public class BuyMapper {
         return BuyColletion.builder()
                 .date(buy.getDate())
                 .idType(buy.getIdType())
-                .id(buy.getId())
+                .idClient(buy.getId())
                 .clientName(buy.getClientName())
                 .products(SoldProductListTosoldProductsListCollection(buy.getProducts()))
                 .build();

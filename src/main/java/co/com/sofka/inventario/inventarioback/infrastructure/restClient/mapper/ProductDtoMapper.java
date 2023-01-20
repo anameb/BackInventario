@@ -3,10 +3,12 @@ package co.com.sofka.inventario.inventarioback.infrastructure.restClient.mapper;
 import co.com.sofka.inventario.inventarioback.domain.models.Products;
 import co.com.sofka.inventario.inventarioback.infrastructure.persistence.colletions.ProductsColletion;
 import co.com.sofka.inventario.inventarioback.infrastructure.restClient.dto.ProductsDto;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class ProductDtoMapper {
 
     public Products ProductDtoToproducts(ProductsDto productsDto){

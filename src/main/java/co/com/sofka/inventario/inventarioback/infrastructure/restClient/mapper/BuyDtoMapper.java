@@ -4,10 +4,12 @@ import co.com.sofka.inventario.inventarioback.domain.models.Buy;
 import co.com.sofka.inventario.inventarioback.domain.models.Products;
 import co.com.sofka.inventario.inventarioback.infrastructure.restClient.dto.BuyDto;
 import co.com.sofka.inventario.inventarioback.infrastructure.restClient.dto.ProductsDto;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class BuyDtoMapper {
     public Buy BuyDtoTobuy(BuyDto buyDto){
         return Buy.builder()
