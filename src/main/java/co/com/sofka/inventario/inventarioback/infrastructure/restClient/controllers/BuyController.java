@@ -1,17 +1,12 @@
 package co.com.sofka.inventario.inventarioback.infrastructure.restClient.controllers;
 
 import co.com.sofka.inventario.inventarioback.application.usecases.BuyUseCase;
-import co.com.sofka.inventario.inventarioback.domain.models.Buy;
-import co.com.sofka.inventario.inventarioback.infrastructure.persistence.colletions.BuyColletion;
-import co.com.sofka.inventario.inventarioback.infrastructure.persistence.colletions.ProductsColletion;
-import co.com.sofka.inventario.inventarioback.infrastructure.persistence.service.BuyService;
 import co.com.sofka.inventario.inventarioback.infrastructure.restClient.dto.BuyDto;
 import co.com.sofka.inventario.inventarioback.infrastructure.restClient.mapper.BuyDtoMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("/buys")
